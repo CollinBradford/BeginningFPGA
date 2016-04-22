@@ -14,8 +14,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Pulser is
     Port ( clk : in STD_LOGIC;
-			  rst : in STD_LOGIC;
-           pulse : out STD_LOGIC);
+	   rst : in STD_LOGIC);
 end Pulser;
 
 architecture Behavioral of Pulser is
@@ -30,6 +29,20 @@ begin
 			temp <= "0000000000000000000";
 		end if;
 	end process;
-	pulse <= temp(18);
 end Behavioral;
 ```
+
+##Breaking it down
+
+Wow!  What's this?  Let's explore...  
+
+The top four lines of course, are library definitions.  These are the standard definitions for most VHDL modules.  
+
+```VHDL
+entity Pulser is
+    Port ( clk : in STD_LOGIC;
+	   rst : in STD_LOGIC);
+end Pulser;
+```
+
+These lines comprise the module definition.  This is the equivelant of a function or method definition in most other programming languages.  In this definition, we have two signals: clk and rst.  These are both of type ```STD_LOGIC``` which defines a one bit logic signal.  

@@ -48,7 +48,7 @@ end Pulser;
 
 These lines comprise the module definition.  This is the equivalent of a function or method definition in most other programming languages.  In this definition, we have three signals: `clk`, `rst`, and `led`.  These are all of the type `STD_LOGIC` which defines a one bit logic signal.  `clk` and `rst` are inputs and `led` is an output.  
 
-```
+```VHDL
 architecture Behavioral of Pulser is
 	signal counter : STD_LOGIC_VECTOR(24 downto 0);
 begin
@@ -79,4 +79,16 @@ Also, I should mention that parentheses around a number designate vectors.  Apos
 
 The timing of your LED will depend on the clock speed of your device.  As an example, the clock speed of my device is 50 mhz so it oscillates at 50,000,000 times a second.  That means that each clock cycle takes 1/50,000,000 of a second to complete.  1 / 50,000,000 * 33,554,431 = 0.671 So our led will blink every 0.671 seconds with a 50% duty cycle.  The design we used was fairly simple.  In a future tutorial, we will build a PWM module that will allow us to change the duty cycle.  
 
+#Constraints
 
+This section is about mapping all those input and output signals from the Hello World design to actual pins on your device.  This actually isn't that hard.  It involves using a constraints file with the extension .ucf 
+
+The following code works for the Hello World application on the Mojo Spartan 6 development board.  
+
+```VHDL
+NET "CLK" LOC = P56 | IOSTANDARD = LVTTL;
+NET "RST" LOC = P38 | IOSTANDARD = LVTTL;
+NET "LED" LOC = P134 | IOSTANDARD = LVTTL;
+```
+
+In the code, we declare a `NET` with the name in quotation marks and assign it a pin number.  The `IOSTANDARD` part assigns an IO standard to the pin.  This defines the voltages at which the pin inherits different states.  Take a look at the graphic here: http://m.eet.com/media/1103154/Fig1.gif  It shows the voltage levels for different standards.  We are using 3.3v LVTTL.  

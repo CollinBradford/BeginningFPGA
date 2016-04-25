@@ -19,13 +19,13 @@ end Pulser;
 architecture Behavioral of Pulser is
 	signal counter : STD_LOGIC_VECTOR(24 downto 0);
 begin
-	process(clk) begin
-		if(rst = '0') then
+	process(clk, rst) begin
+		if(rst = '1') then
 			if(rising_edge(clk)) then
-				counter <= temp + 1;
+				counter <= counter + 1;
 			end if;
 		else
-			counter <= "0000000000000000000";
+			counter <= "0000000000000000000000000";
 		end if;
 	end process;
 	led <= counter(24);
@@ -36,7 +36,7 @@ end Behavioral;
 
 Wow!  What's this?  Let's explore...  
 
-The top four lines of course, are library definitions.  These are some of the standard definitions for most VHDL modules.  
+The top four lines of course, are library declarations.  These are some of the standard declarations for most VHDL modules.  
 
 ```VHDL
 entity Pulser is
@@ -52,13 +52,13 @@ These lines comprise the module definition.  This is the equivalent of a functio
 architecture Behavioral of Pulser is
 	signal counter : STD_LOGIC_VECTOR(24 downto 0);
 begin
-	process(clk) begin
-		if(rst = '0') then
+	process(clk, rst) begin
+		if(rst = '1') then
 			if(rising_edge(clk)) then
-				counter <= temp + 1;
+				counter <= counter + 1;
 			end if;
 		else
-			counter <= "0000000000000000000";
+			counter <= "0000000000000000000000000";
 		end if;
 	end process;
 	led <= counter(24);
@@ -69,7 +69,7 @@ This next part is the meat of the module.  It's where we set the logic that will
 
 First, we declare a signal and call it `counter`.  This signal is like the others we used as inputs and outputs, but it is of the type `STD_LOGIC_VECTOR` instead of `STD_LOGIC`.  This just means that it is a multiple bit signal.  The parenthesis designate that it will be a 25 bit signal and the most significant bit, MSB, is in first, with the least significant bit, LSB, in the leftmost position.  
 
-The process block means that everything inside is done in sequential order.  First we check if `rst` is high.  If it is, we reset the counter to 0.  As long as `rst` is low, we will increment the counter by one each time the clock signal goes high.  The counter will count all the way to 1111111111111111111111111 (33,554,431 or 2^25) and once it is incremented again, it will go back to zero since there isn't enough room to store the extra bit.  
+The process block means that everything inside is done in sequential order.  First we check if `rst` is low.  If it is, we reset the counter to 0.  As long as `rst` is high, we will increment the counter by one each time the clock signal goes high.  This may seem a little backwards and that's because my reset signal is activ low.  You may need to adjust the code accordingly.  The counter will count all the way to 1111111111111111111111111 (33,554,431 or 2^25) and once it is incremented again, it will go back to zero since there isn't enough room to store the extra bit.  
 
 The last thing we need to do is assign the `led`output the value of the 25th bit of the counter.  This will turn it on and off.  
 
@@ -86,9 +86,9 @@ This section is about mapping all those input and output signals from the Hello 
 The following code works for the Hello World application on the Mojo Spartan 6 development board.  
 
 ```VHDL
-NET "CLK" LOC = P56 | IOSTANDARD = LVTTL;
-NET "RST" LOC = P38 | IOSTANDARD = LVTTL;
-NET "LED" LOC = P134 | IOSTANDARD = LVTTL;
+NET "clk" LOC = P56;
+NET "rst" LOC = P38 | IOSTANDARD = LVTTL;
+NET "led" LOC = P134 | IOSTANDARD = LVTTL;
 ```
 
 In the code, we declare a `NET` with the name in quotation marks and assign it a pin number.  The `IOSTANDARD` part assigns an IO standard to the pin.  This defines the voltages at which the pin inherits different states.  Take a look at the graphic here: http://m.eet.com/media/1103154/Fig1.gif  It shows the voltage levels for different standards.  We are using 3.3v LVTTL.  

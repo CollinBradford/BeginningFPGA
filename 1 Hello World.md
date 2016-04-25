@@ -46,7 +46,7 @@ entity Pulser is
 end Pulser;
 ```
 
-These lines comprise the module definition.  This is the equivalent of a function or method definition in most other programming languages.  In this definition, we have three signals: `clk`, `rst`, and `led`.  These are all of the type ```STD_LOGIC``` which defines a one bit logic signal.  ```clk``` and `rst` are inputs and `led` is an output.  
+These lines comprise the module definition.  This is the equivalent of a function or method definition in most other programming languages.  In this definition, we have three signals: `clk`, `rst`, and `led`.  These are all of the type `STD_LOGIC` which defines a one bit logic signal.  `clk` and `rst` are inputs and `led` is an output.  
 
 ```
 architecture Behavioral of Pulser is

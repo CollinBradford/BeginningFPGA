@@ -4,6 +4,8 @@ In this instructional we will explore some of the very basics of VHDL and digita
 
 ## The Code:
 
+Please note:  There is currently an error in the code and it does not work as it is posted.  I am working on this and will publish a better version later.  
+
 ```VHDL
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

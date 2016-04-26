@@ -69,7 +69,7 @@ end Behavioral;
 
 This next part is the meat of the module.  It's where we set the logic that will use the inputs and define the outputs.  Making an led blink is simple, but making it blink with a visible delay is a little harder.  To delay the led, we will count clock cycles up until a certain point and then invert the state of the led.  
 
-First, we declare a signal and call it `counter`.  This signal is like the others we used as inputs and outputs, but it is of the type `STD_LOGIC_VECTOR` instead of `STD_LOGIC`.  This just means that it is a multiple bit signal.  The parenthesis designate that it will be a 25 bit signal and the most significant bit, MSB, is in first, with the least significant bit, LSB, in the leftmost position.  
+First, we declare a signal and call it `counter`.  This signal is like the others we used as inputs and outputs, but it is of the type `STD_LOGIC_VECTOR` instead of `STD_LOGIC`.  This just means that it is a multiple bit signal.  The parenthesis designate that it will be a 25 bit signal and the most significant bit, MSB, is in leftmost position, with the least significant bit, LSB, in the rightmost position.  
 
 The process block means that everything inside is done in sequential order.  First we check if `rst` is low.  If it is, we reset the counter to 0.  As long as `rst` is high, we will increment the counter by one each time the clock signal goes high.  This may seem a little backwards and that's because my reset signal is activ low.  You may need to adjust the code accordingly.  The counter will count all the way to 1111111111111111111111111 (33,554,431 or 2^25) and once it is incremented again, it will go back to zero since there isn't enough room to store the extra bit.  
 

@@ -1,10 +1,10 @@
 # Hello World!  (How to blink an LED)
 
-In this instructional we will explore some of the very basics of VHDL and digital circuit design.  Just like when programming microcontrollers, we'll start by flashing an LED.  
+In this instructional we will explore some of the very basics of VHDL and digital circuit design.  Just like when programming microcontrollers, we'll start by flashing an LED.  We will be using the Mojo Development Board from Embedded Micro.  
 
 ## The Code:
 
-Please note:  There is currently an error in the code and it does not work as it is posted.  I am working on this and will publish a better version later.  
+You can find the entre project in the resources folder.  
 
 ```VHDL
 library IEEE;

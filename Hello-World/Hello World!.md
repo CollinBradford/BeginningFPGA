@@ -75,8 +75,18 @@ Ah, here's where we get to the fun part.  To compile all the source code and loa
 
 To load the file, open the Mojo Loader and click Open Bin File.  The generated bin file should be in the same folder as your ISE project.  Once you have the bin file open in the loader, simply click load.  The option to flash the chip is basically selecting weather or not you want to program the flash memory.  Programming the flash memory means that the design stays on the board after it is powered off.  If you don't program the flash, it will run on the board until the power is removed.  
 
-Congradulations!  You have now created a project and loaded onto your FPGA!  One of the LED's shoudl be flashing on and off.  Remember to check out the resources section for tutorials on VHDL and more on the ISE Design Suite.  
+Congradulations!  You have now created a project and loaded onto your FPGA!  One of the LED's shoudl be flashing on and off.  Remember to check out the resources section for tutorials on VHDL and more on the ISE Design Suite.  I would highly recommend checking out the tutorails on the embedded micro site.  Even thought they aren't written in VHDL, they are valuable for getting to know digital design.
 
 #Resources
 
+Here are the resources for learning VHDL and digital design.  Remember:  There is a difference between VHDL and digital design.  Digital desing is using logic components to do what you want.  VHDL is just a language to tell the computer how to use those logic gates.  Both must be learned to gain a good understanding of FPGA design.  
+
 1. Quick start guide for ISE Design Suite: http://www.xilinx.com/itp/xilinx10/books/docs/qst/qst.pdf
+
+2. Embedded Miro Tutorials:  https://embeddedmicro.com/tutorials
+
+3. FREE VHDL WEB BOOK!  (just put in your email address and download the open source book) http://freerangefactory.org/
+
+4. VHDL Primer: http://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html
+
+5. Introduction to Logic Gates (At the bottom of the page you can move to the next tutorails that talk about each indivisual logic gate): http://www.electronics-tutorials.ws/logic/logic_1.html

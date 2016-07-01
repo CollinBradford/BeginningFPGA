@@ -61,7 +61,7 @@ First thing to do is create the project.  From the toolbar go to File => new pro
 
 After finishing with the project wizard you should have a new project!  Yay!  Now we need to add the files.  In the Design tab on the left side of the screen, right click on the chip number and select New Source.  Now, create a new VHDL module and call it something liek top.  Next is where you define the ports you are going to use.  This is very helpful as it reduces the amount of coding you have to do later, by adding ports for you.  We are going to add three ports to this module: clk, rst, and pulse.  clk and rst will be inputs, and pulse will be an output.  In the end it should look like this:  
 
-![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Project%20Settings.PNG "Ports")
+![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Ports.PNG "Ports")
 
 Once you have finished creating your project, it you should see your ports automatically added at the top.  You can edit them if needed, but adding them first will give us a good starting point.  All you need to do now, is add the code that's pictured above and you should be good to go!  
 

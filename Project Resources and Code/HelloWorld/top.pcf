@@ -1,0 +1,18 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Jul 01 10:06:46 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "P56" LEVEL 1;
+COMP "led" LOCATE = SITE "P134" LEVEL 1;
+COMP "rst" LOCATE = SITE "P38" LEVEL 1;
+TIMEGRP clk = BEL "counter_0" BEL "counter_1" BEL "counter_2" BEL "counter_3"
+        BEL "counter_4" BEL "counter_5" BEL "counter_6" BEL "counter_7" BEL
+        "counter_8" BEL "counter_9" BEL "counter_10" BEL "counter_11" BEL
+        "counter_12" BEL "counter_13" BEL "counter_14" BEL "counter_15" BEL
+        "counter_16" BEL "counter_17" BEL "counter_18" BEL "counter_19" BEL
+        "counter_20" BEL "counter_21" BEL "counter_22" BEL "counter_23" BEL
+        "counter_24" BEL "clk_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

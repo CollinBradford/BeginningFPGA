@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Collin/Google Drive/Mojo/HelloWorld/top_tb_isim_beh.exe" -prj "C:/Users/Collin/Google Drive/Mojo/HelloWorld/top_tb_beh.prj" "work.top_tb" 

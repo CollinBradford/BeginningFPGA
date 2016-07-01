@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Collin\Google Drive\Mojo\HelloWorld\top.ncd
+OUTFILE=C:\Users\Collin\Google Drive\Mojo\HelloWorld\top.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=C:\Users\Collin\Google Drive\Mojo\HelloWorld
+LICENSE=WebPack
+USER_INFO=211103197_0_0_373

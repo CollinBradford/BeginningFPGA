@@ -35,25 +35,48 @@ end Behavioral;
 ```
 
 ```VHDL
-NET "clk" LOC = P56;
+NET "clk" TNM_NET = clk;
+TIMESPEC TS_clk = PERIOD "clk" 50 MHz HIGH 50%;
+
+NET "clk" LOC = P56 | IOSTANDARD = LVTTL;
 NET "rst" LOC = P38 | IOSTANDARD = LVTTL;
 NET "led" LOC = P134 | IOSTANDARD = LVTTL;
 ```
 
-##Breaking it down.  
+### Breaking it down.  
 
 Wow, what's this?  I won't go into too much detail, but here are the basics:  The first few lines of code include the different libraries we will be using.  The next few lines define the entity.  This is the equivelant to a function definition.  It shows all the input signals and output signals.  The behavior block defines what we do with those signals.  Lastly, the constraints at the very end are in a different file.  They map some of the ports to actual pins on the device.  
 
-##Using ISE
+## Using ISE
 
 To learn ISE, I would recommend running throught the tutorial and setting up the project yourself instead of just downloading the peoject files.  This is always benificial the first time.  
 
-###Creating a new project
+### Creating a new project
 
 First thing to do is create the project.  From the toolbar go to File => new project.  This will open up the new project wizard.  It will guide you through creating a project.  Assuming you have used and IDE before, you probably are alread familiar with the wizard, but for this project, we need to give a little more information.  You will need to select the FPGA you are using, the simulator, and the language.  All the FPGA information should be stamped on the FPAG.  Unless you have paid for a better simulator, we will be using ISim.  The language will be VHDL.  In the future, we will use a schematic for our top language.  The indivisual components will be written in VHDL, but we will connect everything together with the schematic.  Your project setting page should look like this:  
 
 ![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Project%20Settings.PNG "Projet Properties")
 
+### Adding a VHDL Module
+
+After finishing with the project wizard you should have a new project!  Yay!  Now we need to add the files.  In the Design tab on the left side of the screen, right click on the chip number and select New Source.  Now, create a new VHDL module and call it something liek top.  Next is where you define the ports you are going to use.  This is very helpful as it reduces the amount of coding you have to do later, by adding ports for you.  We are going to add three ports to this module: clk, rst, and pulse.  clk and rst will be inputs, and pulse will be an output.  In the end it should look like this:  
+
+![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Project%20Settings.PNG "Ports")
+
+Once you have finished creating your project, it you should see your ports automatically added at the top.  You can edit them if needed, but adding them first will give us a good starting point.  All you need to do now, is add the code that's pictured above and you should be good to go!  
+
+### Adding Constraints
+
+As I mentioned above, constraints go in a different file.  They tell the FPGA what pins to use for what signals.  The process for creating a constraints filse is pretty much the same as last time.  Just select constraints (UCF) file instead of VHDL.  Once it is created, copy the above constraints code.  
+
+## Compiling
+
+Ah, here's where we get to the fun part.  To compile all the source code and load it onto the Mojo FPGA, we need to edit the compiling properties.  From the Design tab, click on the top file.  In the window just below the Hierachy, right click Generate Programming File and select Process Properties.  Under General Options, select Create Binary Configuration File.  This will tell the compiler to create a .bin file that we can use with the Mojo Loader.  After you are done with the process properties, double click Generate Programming File.  It should generate the file without errors.  
+
+To load the file, open the Mojo Loader and click Open Bin File.  The generated bin file should be in the same folder as your ISE project.  Once you have the bin file open in the loader, simply click load.  The option to flash the chip is basically selecting weather or not you want to program the flash memory.  Programming the flash memory means that the design stays on the board after it is powered off.  If you don't program the flash, it will run on the board until the power is removed.  
+
+Congradulations!  You have now created a project and loaded onto your FPGA!  One of the LED's shoudl be flashing on and off.  Remember to check out the resources section for tutorials on VHDL and more on the ISE Design Suite.  
+
 #Resources
 
-1. http://www.xilinx.com/itp/xilinx10/books/docs/qst/qst.pdf
+1. Quick start guide for ISE Design Suite: http://www.xilinx.com/itp/xilinx10/books/docs/qst/qst.pdf

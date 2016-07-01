@@ -52,7 +52,7 @@ To learn ISE, I would recommend running throught the tutorial and setting up the
 
 First thing to do is create the project.  From the toolbar go to File => new project.  This will open up the new project wizard.  It will guide you through creating a project.  Assuming you have used and IDE before, you probably are alread familiar with the wizard, but for this project, we need to give a little more information.  You will need to select the FPGA you are using, the simulator, and the language.  All the FPGA information should be stamped on the FPAG.  Unless you have paid for a better simulator, we will be using ISim.  The language will be VHDL.  In the future, we will use a schematic for our top language.  The indivisual components will be written in VHDL, but we will connect everything together with the schematic.  Your project setting page should look like this:  
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Projet Properties")
+![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Project%20Settings.PNG "Projet Properties")
 
 #Resources
 

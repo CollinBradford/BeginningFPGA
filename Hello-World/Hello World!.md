@@ -55,13 +55,13 @@ To learn ISE, I would recommend running through the tutorial and setting up the 
 
 First thing to do is create the project.  From the toolbar go to File => new project.  This will open up the new project wizard.  It will guide you through creating a project.  Assuming you have used and IDE before, you probably are already familiar with the wizard, but for this project, we need to give a little more information.  You will need to select the FPGA you are using, the simulator, and the language.  All the FPGA information should be stamped on the FPAG.  Unless you have paid for a better simulator, we will be using ISim.  The language will be VHDL.  In the future, we will use a schematic for our top language.  The individual components will be written in VHDL, but we will connect everything together with the schematic.  Your project setting page should look like this:  
 
-![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/master/Hello-World/Project%20Resources/Ports.PNG "Projet Properties")
+![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Project%20Settings.PNG "Projet Properties")
 
 ### Adding a VHDL Module
 
 After finishing with the project wizard you should have a new project!  Yay!  Now we need to add the files.  In the Design tab on the left side of the screen, right click on the chip number and select New Source.  Now, create a new VHDL module and call it something like “top”.  Next is where you define the ports you are going to use.  This is very helpful as it reduces the amount of coding you have to do later, by adding ports for you.  We are going to add three ports to this module: clk, rst, and pulse.  clk and rst will be inputs, and pulse will be an output.  In the end it should look like this:  
 
-![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/master/Hello-World/Project%20Resources/Project%20Settings.PNG "Ports")
+![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Ports.PNG "Ports")
 
 Once you have finished creating your project, it you should see your ports automatically added at the top.  You can edit them if needed, but adding them first will give us a good starting point.  All you need to do now, is add the code that's pictured above and you should be good to go!  
 
@@ -76,6 +76,11 @@ Ah, here's where we get to the fun part.  To compile all the source code and loa
 To load the file, open the Mojo Loader and click Open Bin File.  The generated bin file should be in the same folder as your ISE project.  Once you have the bin file open in the loader, simply click load.  The option to flash the chip is basically selecting whether or not you want to program the flash memory.  Programming the flash memory means that the design stays on the board after it is powered off.  If you don't program the flash, it will run on the board until the power is removed.  
 
 Congratulations!  You have now created a project and loaded onto your FPGA!  One of the LED's should be flashing on and off.  Remember to check out the resources section for tutorials on VHDL and more on the ISE Design Suite.  I would highly recommend checking out the tutorials on the embedded micro site.  Even though they aren't written in VHDL, they are valuable for getting to know digital design.
+
+#Suggested Exercises
+
+1. Change things!  Change anything!  Use different pins or something.  Try to change the timing of the LED.  
+2. Use this as a baseline for a PWM module.  Go thorough the description on EmbeddedMicro and try to figure out how to implement the design in VHDL.  
 
 #Resources
 

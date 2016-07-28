@@ -55,13 +55,13 @@ To learn ISE, I would recommend running through the tutorial and setting up the 
 
 First thing to do is create the project.  From the toolbar go to File => new project.  This will open up the new project wizard.  It will guide you through creating a project.  Assuming you have used and IDE before, you probably are already familiar with the wizard, but for this project, we need to give a little more information.  You will need to select the FPGA you are using, the simulator, and the language.  All the FPGA information should be stamped on the FPAG.  Unless you have paid for a better simulator, we will be using ISim.  The language will be VHDL.  In the future, we will use a schematic for our top language.  The individual components will be written in VHDL, but we will connect everything together with the schematic.  Your project setting page should look like this:  
 
-![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Project%20Settings.PNG "Projet Properties")
+![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/master/Hello-World/Project%20Resources/Ports.PNG "Projet Properties")
 
 ### Adding a VHDL Module
 
 After finishing with the project wizard you should have a new project!  Yay!  Now we need to add the files.  In the Design tab on the left side of the screen, right click on the chip number and select New Source.  Now, create a new VHDL module and call it something like “top”.  Next is where you define the ports you are going to use.  This is very helpful as it reduces the amount of coding you have to do later, by adding ports for you.  We are going to add three ports to this module: clk, rst, and pulse.  clk and rst will be inputs, and pulse will be an output.  In the end it should look like this:  
 
-![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/BurstCounterTutorial/Hello-World/Project%20Resources/Ports.PNG "Ports")
+![alt text](https://github.com/CollinBradford/BeginningFPGA/blob/master/Hello-World/Project%20Resources/Project%20Settings.PNG "Ports")
 
 Once you have finished creating your project, it you should see your ports automatically added at the top.  You can edit them if needed, but adding them first will give us a good starting point.  All you need to do now, is add the code that's pictured above and you should be good to go!  
 

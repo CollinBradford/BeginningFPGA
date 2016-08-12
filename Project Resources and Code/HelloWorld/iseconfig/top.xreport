@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-07-01T10:06:20</DateModified>
+  <DateModified>2016-07-28T15:54:56</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2016-07-01T10:05:31</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Collin/Google Drive/Mojo/HelloWorld/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Collin/Google Drive/Mojo/helloworld\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Collin/Fermilab/BeginningFPGA/Project Resources and Code/HelloWorld/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Collin/Fermilab/BeginningFPGA/Project Resources and Code/HelloWorld\</ImplementationReportsDirectory>
   <DateInitialized>2016-04-27T13:08:19</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

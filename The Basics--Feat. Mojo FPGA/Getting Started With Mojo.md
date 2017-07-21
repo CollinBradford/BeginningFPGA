@@ -1,39 +1,39 @@
-#Getting Started with FPGA's Featuring: Mojo Development Platform
+# Getting Started with FPGA's Featuring: Mojo Development Platform
 
-##Intorduction
+## Introduction
 
-Welcome!  I am a student working at Fermilab helping to develop a data aquisition system using FPGA's.  For purposes of documentation, I have been commishioned to write a set of instructionals and documentation pages explaning the project as I go along.  I hope a lot of people can use these tutorials to get started using FPGA's.  Most of this documtation will be about learning how to use FPGA's. I won't spend to much time explaning programming practices or digital design.  There are plenty of textbooks and tutorials out ther for that.  I will, however, leave links to many great resources for learning HDL and digital design.  
+Welcome!  I am a student working at Fermilab helping to develop a data acquisition system using FPGAs.  For purposes of documentation, I have been commissioned to write a set of instructionals and documentation pages explaining the project as I go along.  I hope a lot of people can use these tutorials to get started using FPGAs.  Most of this documentation will be about learning how to use FPGAs. I won't spend too much time explaining programming practices or digital design.  There are plenty of textbooks and tutorials out there for that.  I will, however, leave links to many great resources for learning HDL and digital design.  
 
 This set of tutorials starts with the basics.  We will use the Mojo development platform as a springboard to get us started so we can use some really awesome and complicated tools later.  
 
 
-##Getting Everything Together
+## Getting Everything Together
 
-First of all, we need the tools.  Check out the Mojo home page and get familiar with the platform we will be working with.  It is the first link in the resources below.  Mojo is a FPGA development platform from Embedded Micro.  I consider it the "Arduino"  of FPGA's.  It is really simple to use.  Just about as plug-and-play as you can get.  It is really a Spartian 6 combined with a Atmel microcontroller.  The microcontroller can be programmed and also acts as the "bridge" between the computer and the FPGA.  
+For anyone just starting out learning FPGA and digital circuit design, I recommend the Mojo Development Board from Embedded Micro.  I consider it the "Arduino"  of FPGA's.  As far as FPGAs go, it's just about as plug-and-play as you can get.  The development board consists of a Spartan 6 paired with an Atmel microcontroller.  Each chip can be programmed, but as I understand it, the microcontroller acts as the JTag programmer, eliminating the need for an expensive programmer from Xilinx.  
 
-For programming an FPGA, you need Four things:  
+For programming an FPGA using the Mojo environment, you will need the following things.  
 
-1. FPGA I am using Mojo V3
+1. FPGA development board
 2. Mojo IDE
-3. Mojo Loader.  Although not strictly nessary, we will use it to load files we develop in ISE.  
+3. Mojo Loader.  Although not strictly necessary, we will use it to load files we develop in ISE.  
 4. Xilinx ISE Design Suite
 
 The FPGA can be purchased from the products page on the Mojo site.  
 
-Instructions for how to downolad and install the Mojo IDE and Mojo Loader can be found in the 2nd and 3rd links in the resources section.  
+Instructions for how to download and install the Mojo IDE and Mojo Loader can be found in the 2nd and 3rd links in the resources section.  
 
-The ISE deisng suite is a large collection of software from Xilinx.  (the company that develops the FPGA's we use)  Just follow the instructions from Embedded Micro on the page from the 4th link in the resouces section.  
+The ISE design suite is a large collection of software from Xilinx.  (the company that develops the FPGA's we use)  Just follow the instructions from Embedded Micro on the page from the 4th link in the resources section.  
 
-##Getting Started with the Software
+## Getting Started with the Software
 
-Currently, the Mojo development enviornment only uses Verilogue and Lucid.  (A launguage from our friends at Embedded Micro) Since these tutorials will be primarily in VHDL, I will leave it up to you to explore Verilogue and Luid.  If you need some education on the basics of digital design, I would highly recommend their tutorials.  They can be found from the 5th link in the resources section. 
+Currently, the Mojo development environment only uses Verilogue and Lucid.  (A language from our friends at Embedded Micro) Since these tutorials will be primarily in VHDL, I will leave it up to you to explore Verilogue and Lucid.  If you need some education on the basics of digital design, I would highly recommend their tutorials on the Embedded Micro website.  They can be found from the 5th link in the resources section. 
 
 ## Tying things up
 
-This has been kind of the intro to Mojo page.  In the next section I will actually have a basic project with code written in VHDL and some explination.  
+This has been kind of the intro to Mojo page.  In the next section I will actually have a basic project with code written in VHDL and some explanation.  
 
 
-##Resources
+## Resources
 
 1. Mojo home page: https://embeddedmicro.com/
 
